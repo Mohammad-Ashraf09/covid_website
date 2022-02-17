@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19 Live - World's Satatistics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- for favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    
+</head>
+<body>
+    <header class="sticky">
+            <a href="CoviTracker.html"> <img src="images/coronavirus-icon-2.png"> </a>
+            <a href="CoviTracker.html" id="title">CoviTracker</a>
+            <div class="nav-links" id="navLinks">
+                <!-- <i class="fa fa-times" onclick="hideMenu()"></i> -->
+                <ul>
+                    <li> <a href="">ABOUT</a> </li>
+                    <li> <a href="">HELP</a> </li>
+                    <li> <a href="">APPOINT VACCINATION</a> </li>
+                    <li> <a href="">WHO</a> </li>
+                    <li> <a href="">CONTACT</a> </li>
+                </ul>
+            </div>
+            <!-- <i class="fa fa-bars" onclick="showMenu()"></i> -->
+    </header>
+    
+    <section>
+        <div id="latest-cases">
+            <div class="latest" id="total">
+                <canvas id="myChart1"></canvas>
+            </div>
+            <div class="latest" id="new">
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <div id="news">
+                <div id="news1"></div>
+                <div id="news2"></div>
+            </div>
+            <div class="flags">
+                <div id="box">
+                    <div id="search-box">
+                        <input id="content" type="text" placeholder="Enter Country Name Here">
+                        <div id="search-btn">
+                            <a href=""><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flag-icon">
+                        <a href="Countries/afganistan.html" target="to_blank"> <img src="images/flags/Afganistan.png" alt=""> <div class="layer"> <h6>AFGANISTAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/albania.html" target="to_blank"> <img src="images/flags/Albania.png" alt=""> <div class="layer"> <h6>ALBANIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/algeria.html" target="to_blank"> <img src="images/flags/Algeria.png" alt=""> <div class="layer"> <h6>ALGERIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/andorra.html" target="to_blank"> <img src="images/flags/Andorra.png" alt=""> <div class="layer"> <h6>ANDORRA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/angola.html" target="to_blank"> <img src="images/flags/Angola.png" alt=""> <div class="layer"> <h6>ANGOLA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/antigua.html" target="to_blank"> <img src="images/flags/Antigua.png" alt=""> <div class="layer"> <h6>ANTIGUA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/argentina.html" target="to_blank"> <img src="images/flags/Argentina.png" alt=""> <div class="layer"> <h6>ARGENTINA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/armenia.html" target="to_blank"> <img src="images/flags/Armenia.png" alt=""> <div class="layer"> <h6>ARMENIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/aruba.html" target="to_blank"> <img src="images/flags/Aruba.png" alt=""> <div class="layer"> <h6>ARUBA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/australia.html" target="to_blank"> <img src="images/flags/Australia.png" alt=""> <div class="layer"> <h6>AUSTRALIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/austria.html" target="to_blank"> <img src="images/flags/Austria.png" alt=""> <div class="layer"> <h6>AUSTRIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/azerbaijan.html" target="to_blank"> <img src="images/flags/Azerbaijan.png" alt=""> <div class="layer"> <h6>AZERBAIJAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bahamas.html" target="to_blank"> <img src="images/flags/Bahamas.png" alt=""> <div class="layer"> <h6>BAHAMAS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bahrain.html" target="to_blank"> <img src="images/flags/Bahrain.png" alt=""> <div class="layer"> <h6>BAHRAIN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bangladesh.html" target="to_blank"> <img src="images/flags/Bangladesh.png" alt=""> <div class="layer"> <h6>BANGLADESH</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/barbados.html" target="to_blank"> <img src="images/flags/Barbados.png" alt=""> <div class="layer"> <h6>BARBADOS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/belarus.html" target="to_blank"> <img src="images/flags/Belarus.png" alt=""> <div class="layer"> <h6>BELARUS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/belgium.html" target="to_blank"> <img src="images/flags/Belgium.png" alt=""> <div class="layer"> <h6>BELGIUM</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/belize.html" target="to_blank"> <img src="images/flags/Belize.png" alt=""> <div class="layer"> <h6>BELIZE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/benin.html" target="to_blank"> <img src="images/flags/Benin.png" alt=""> <div class="layer"> <h6>BENIN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bermuda.html" target="to_blank"> <img src="images/flags/Bermuda.png" alt=""> <div class="layer"> <h6>BERMUDA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bhutan.html" target="to_blank"> <img src="images/flags/Bhutan.png" alt=""> <div class="layer"> <h6>BHUTAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bolivia.html" target="to_blank"> <img src="images/flags/Bolivia.png" alt=""> <div class="layer"> <h6>BOLIVIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bosnia.html" target="to_blank"> <img src="images/flags/Bosnia.png" alt=""> <div class="layer"> <h6>BOSNIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/brazil.html" target="to_blank"> <img src="images/flags/Brazil.png" alt=""> <div class="layer"> <h6>BRAZIL</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/brunie.html" target="to_blank"> <img src="images/flags/Brunei.png" alt=""> <div class="layer"> <h6>BRUNEI</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/bulgaria.html" target="to_blank"> <img src="images/flags/Bulgaria.png" alt=""> <div class="layer"> <h6>BULGARIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/burkina faso.html" target="to_blank"> <img src="images/flags/Burkina Faso.png" alt=""> <div class="layer"> <h6>BURKINA FASO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/burundi.html" target="to_blank"> <img src="images/flags/Burundi.png" alt=""> <div class="layer"> <h6>BURUNDI</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/cambodia.html" target="to_blank"> <img src="images/flags/Cambodia.png" alt=""> <div class="layer"> <h6>CAMBODIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/cameroon.html" target="to_blank"> <img src="images/flags/Cameroon.png" alt=""> <div class="layer"> <h6>CAMEROON</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/canada.html" target="to_blank"> <img src="images/flags/Canada.png" alt=""> <div class="layer"> <h6>CANADA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/cayman islands.html" target="to_blank"> <img src="images/flags/Cayman Islands.png" alt=""> <div class="layer"> <h6>CAYMAN ISLANDS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/chad.html" target="to_blank"> <img src="images/flags/Chad.png" alt=""> <div class="layer"> <h6>CHAD</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/chile.html" target="to_blank"> <img src="images/flags/Chile.png" alt=""> <div class="layer"> <h6>CHILE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/china.html" target="to_blank"> <img src="images/flags/China.png" alt=""> <div class="layer"> <h6>CHINA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/colombia.html" target="to_blank"> <img src="images/flags/Colombia.png" alt=""> <div class="layer"> <h6>COLOMBIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/comoros.html" target="to_blank"> <img src="images/flags/Comoros.png" alt=""> <div class="layer"> <h6>COMOROS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/congo.html" target="to_blank"> <img src="images/flags/Congo.png" alt=""> <div class="layer"> <h6>CONGO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/costa rica.html" target="to_blank"> <img src="images/flags/Costa Rica.png" alt=""> <div class="layer"> <h6>COSTA RICA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/croatia.html" target="to_blank"> <img src="images/flags/Croatia.png" alt=""> <div class="layer"> <h6>CROATIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/cuba.html" target="to_blank"> <img src="images/flags/Cuba.png" alt=""> <div class="layer"> <h6>CUBA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/curacao.html" target="to_blank"> <img src="images/flags/Curacao.png" alt=""> <div class="layer"> <h6>CURACAO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/cyprus.html" target="to_blank"> <img src="images/flags/Cyprus.png" alt=""> <div class="layer"> <h6>CYPRUS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/czech rep.html" target="to_blank"> <img src="images/flags/Czech Rep.png" alt=""> <div class="layer"> <h6>CZECH REPUBLIC</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/denmark.html" target="to_blank"> <img src="images/flags/Denmark.png" alt=""> <div class="layer"> <h6>DENMARK</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/djibouti.html" target="to_blank"> <img src="images/flags/Djibouti.png" alt=""> <div class="layer"> <h6>DJIBOUTI</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/dominica.html" target="to_blank"> <img src="images/flags/Dominica.png" alt=""> <div class="layer"> <h6>DOMINICA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/dominican rep.html" target="to_blank"> <img src="images/flags/Dominican Rep.png" alt=""> <div class="layer"> <h6>DOMINICAN REP.</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/ecuador.html" target="to_blank"> <img src="images/flags/Ecuador.png" alt=""> <div class="layer"> <h6>ECUADOR</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/egypt.html" target="to_blank"> <img src="images/flags/Egypt.png" alt=""> <div class="layer"> <h6>EGYPT</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/el salvador.html" target="to_blank"> <img src="images/flags/El Salvador.png" alt=""> <div class="layer"> <h6>EL SALVADOR</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/england.html" target="to_blank"> <img src="images/flags/England.png" alt=""> <div class="layer"> <h6>ENGLAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/equatorial guinea.html" target="to_blank"> <img src="images/flags/Equatorial Guinea.png" alt=""> <div class="layer"> <h6>EQUATORIAL GUINEA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/eritrea.html" target="to_blank"> <img src="images/flags/Eritrea.png" alt=""> <div class="layer"> <h6>ERITREA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/estonia.html" target="to_blank"> <img src="images/flags/Estonia.png" alt=""> <div class="layer"> <h6>ESTONIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/ethiopia.html" target="to_blank"> <img src="images/flags/Ethiopia.png" alt=""> <div class="layer"> <h6>ETHIOPIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/falkland islands.html" target="to_blank"> <img src="images/flags/Falkland Islands.png" alt=""> <div class="layer"> <h6>FALKLAND ISLANDS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/fiji.html" target="to_blank"> <img src="images/flags/Fiji.png" alt=""> <div class="layer"> <h6>FIJI</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/finland.html" target="to_blank"> <img src="images/flags/Finland.png" alt=""> <div class="layer"> <h6>FINLAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/france.html" target="to_blank"> <img src="images/flags/France.png" alt=""> <div class="layer"> <h6>FRANCE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/french guiana.html" target="to_blank"> <img src="images/flags/French Guiana.png" alt=""> <div class="layer"> <h6>FRENCH GUIANA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/french polynesia.html" target="to_blank"> <img src="images/flags/French Polynesia.png" alt=""> <div class="layer"> <h6>FRENCH POLYNESIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/gabon.html" target="to_blank"> <img src="images/flags/Gabon.png" alt=""> <div class="layer"> <h6>GABON</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/gambia.html" target="to_blank"> <img src="images/flags/Gambia.png" alt=""> <div class="layer"> <h6>GAMBIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/georgia.html" target="to_blank"> <img src="images/flags/Georgia.png" alt=""> <div class="layer"> <h6>GEORGIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/germany.html" target="to_blank"> <img src="images/flags/Germany.png" alt=""> <div class="layer"> <h6>GERMANY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/ghana.html" target="to_blank"> <img src="images/flags/Ghana.png" alt=""> <div class="layer"> <h6>GHANA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/gibraltar.html" target="to_blank"> <img src="images/flags/Gibraltar.png" alt=""> <div class="layer"> <h6>GIBRALTAR</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/greece.html" target="to_blank"> <img src="images/flags/Greece.png" alt=""> <div class="layer"> <h6>GREECE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/greenland.html" target="to_blank"> <img src="images/flags/Greenland.png" alt=""> <div class="layer"> <h6>GREENLAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/grenada.html" target="to_blank"> <img src="images/flags/Grenada.png" alt=""> <div class="layer"> <h6>GRENADA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/guadeloupe.html" target="to_blank"> <img src="images/flags/Guadeloupe.png" alt=""> <div class="layer"> <h6>GUADELOUPE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/guatemal.html" target="to_blank"> <img src="images/flags/Guatemala.png" alt=""> <div class="layer"> <h6>GUATEMALA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/guinea-bissau.html" target="to_blank"> <img src="images/flags/Guinea-Bissau.png" alt=""> <div class="layer"> <h6>GUINEA-BISSAU</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/guinea.html" target="to_blank"> <img src="images/flags/Guinea.png" alt=""> <div class="layer"> <h6>GUINEA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/guyana.html" target="to_blank"> <img src="images/flags/Guyana.png" alt=""> <div class="layer"> <h6>GUYANA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/haiti.html" target="to_blank"> <img src="images/flags/Haiti.png" alt=""> <div class="layer"> <h6>HAITI</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/hondurus.html" target="to_blank"> <img src="images/flags/Honduras.png" alt=""> <div class="layer"> <h6>HONDURAS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/hong kong.html" target="to_blank"> <img src="images/flags/Hong Kong.png" alt=""> <div class="layer"> <h6>HONG KONG</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/hungary.html" target="to_blank"> <img src="images/flags/Hungary.png" alt=""> <div class="layer"> <h6>HUNGARY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/iceland.html" target="to_blank"> <img src="images/flags/Iceland.png" alt=""> <div class="layer"> <h6>ICELAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/india.html" target="to_blank"> <img src="images/flags/India.png" alt=""> <div class="layer"> <h6>INDIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/indonesia.html" target="to_blank"> <img src="images/flags/Indonesia.png" alt=""> <div class="layer"> <h6>INDONESIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/iran.html" target="to_blank"> <img src="images/flags/Iran.png" alt=""> <div class="layer"> <h6>IRAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/iraq.html" target="to_blank"> <img src="images/flags/Iraq.png" alt=""> <div class="layer"> <h6>IRAQ</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/ireland.html" target="to_blank"> <img src="images/flags/Ireland.png" alt=""> <div class="layer"> <h6>IRELAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/isle of man.html" target="to_blank"> <img src="images/flags/Isle of Man.png" alt=""> <div class="layer"> <h6>ISLE of MAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/israel.html" target="to_blank"> <img src="images/flags/Israel.png" alt=""> <div class="layer"> <h6>ISRAEL</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/italy.html" target="to_blank"> <img src="images/flags/Italy.png" alt=""> <div class="layer"> <h6>ITALY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/jamaica.html" target="to_blank"> <img src="images/flags/Jamaica.png" alt=""> <div class="layer"> <h6>JAMAICA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/japan.html" target="to_blank"> <img src="images/flags/Japan.png" alt=""> <div class="layer"> <h6>JAPAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/jordan.html" target="to_blank"> <img src="images/flags/Jordan.png" alt=""> <div class="layer"> <h6>JORDAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/kazakhstan.html" target="to_blank"> <img src="images/flags/Kazakhstan.png" alt=""> <div class="layer"> <h6>KAZAKHSTAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/kenya.html" target="to_blank"> <img src="images/flags/Kenya.png" alt=""> <div class="layer"> <h6>KENYA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/kuwait.html" target="to_blank"> <img src="images/flags/Kuwait.png" alt=""> <div class="layer"> <h6>KUWAIT</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/kyrgyzstan.html" target="to_blank"> <img src="images/flags/Kyrgyzstan.png" alt=""> <div class="layer"> <h6>KYRGYZSTAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/laos.html" target="to_blank"> <img src="images/flags/Laos.png" alt=""> <div class="layer"> <h6>LAOS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/latvia.html" target="to_blank"> <img src="images/flags/Latvia.png" alt=""> <div class="layer"> <h6>LATVIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/lebanon.html" target="to_blank"> <img src="images/flags/Lebanon.png" alt=""> <div class="layer"> <h6>LEBNON</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/lesotho.html" target="to_blank"> <img src="images/flags/Lesotho.png" alt=""> <div class="layer"> <h6>LESOTHO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/liberia.html" target="to_blank"> <img src="images/flags/Liberia.png" alt=""> <div class="layer"> <h6>LIBERIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/libya.html" target="to_blank"> <img src="images/flags/Libya.png" alt=""> <div class="layer"> <h6>LIBYA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/liechtenstein.html" target="to_blank"> <img src="images/flags/Liechtenstein.png" alt=""> <div class="layer"> <h6>LIECHTENSTEIN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/lithuania.html" target="to_blank"> <img src="images/flags/Lithuania.png" alt=""> <div class="layer"> <h6>LITHUANIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/luxembourg.html" target="to_blank"> <img src="images/flags/Luxembourg.png" alt=""> <div class="layer"> <h6>LUXEMBOURG</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/macao.html" target="to_blank"> <img src="images/flags/Macao.png" alt=""> <div class="layer"> <h6>MACAO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/macedonia.html" target="to_blank"> <img src="images/flags/Macedonia.png" alt=""> <div class="layer"> <h6>NORTH MACEDONIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/madagascar.html" target="to_blank"> <img src="images/flags/Madagascar.png" alt=""> <div class="layer"> <h6>MADAGASCAR</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/malawi.html" target="to_blank"> <img src="images/flags/Malawi.png" alt=""> <div class="layer"> <h6>MALAWI</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/malaysia.html" target="to_blank"> <img src="images/flags/Malaysia.png" alt=""> <div class="layer"> <h6>MALAYSIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/maldives.html" target="to_blank"> <img src="images/flags/maldives.png" alt=""> <div class="layer"> <h6>MALDIVES</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/mali.html" target="to_blank"> <img src="images/flags/Mali.png" alt=""> <div class="layer"> <h6>MALI</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/malta.html" target="to_blank"> <img src="images/flags/Malta.png" alt=""> <div class="layer"> <h6>MALTA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/marshall islands.html" target="to_blank"> <img src="images/flags/Marshall Islands.png" alt=""> <div class="layer"> <h6>MARSHALL ISLANDS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/martinique.html" target="to_blank"> <img src="images/flags/Martinique.png" alt=""> <div class="layer"> <h6>MARTINIQUE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/mauritania.html" target="to_blank"> <img src="images/flags/Mauritania.png" alt=""> <div class="layer"> <h6>MAURITANIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/mauritius.html" target="to_blank"> <img src="images/flags/Mauritius.png" alt=""> <div class="layer"> <h6>MAURITIUS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/mexico.html" target="to_blank"> <img src="images/flags/Mexico.png" alt=""> <div class="layer"> <h6>MEXICO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/micronesia-federated states.html" target="to_blank"> <img src="images/flags/Micronesia-Federated States.png" alt=""> <div class="layer"> <h6>MICRONESIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/moldova.html" target="to_blank"> <img src="images/flags/Moldova.png" alt=""> <div class="layer"> <h6>MOLDOVA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/monaco.html" target="to_blank"> <img src="images/flags/Monaco.png" alt=""> <div class="layer"> <h6>MONACO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/mongolia.html" target="to_blank"> <img src="images/flags/Mongolia.png" alt=""> <div class="layer"> <h6>MONGOLIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/montenegro.html" target="to_blank"> <img src="images/flags/Montenegro.png" alt=""> <div class="layer"> <h6>MONTENEGRO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/montserrat.html" target="to_blank"> <img src="images/flags/Montserrat.png" alt=""> <div class="layer"> <h6>MONTSERRAT</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/morocco.html" target="to_blank"> <img src="images/flags/Morocco.png" alt=""> <div class="layer"> <h6>MOROCCO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/mozambique.html" target="to_blank"> <img src="images/flags/Mozambique.png" alt=""> <div class="layer"> <h6>MOZAMBIQUE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/myanmar.html" target="to_blank"> <img src="images/flags/Myanmar.png" alt=""> <div class="layer"> <h6>MYANMAR</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/namibia.html" target="to_blank"> <img src="images/flags/Namibia.png" alt=""> <div class="layer"> <h6>NAMIBIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/nepal.html" target="to_blank"> <img src="images/flags/Nepal.png" alt=""> <div class="layer"> <h6>NEPAL</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/netherlands.html" target="to_blank"> <img src="images/flags/Netherlands.png" alt=""> <div class="layer"> <h6>NETHERLANDS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/new caledonia.html" target="to_blank"> <img src="images/flags/New Caledonia.png" alt=""> <div class="layer"> <h6>NEW CALEDONIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/new zealand.html" target="to_blank"> <img src="images/flags/New Zealand.png" alt=""> <div class="layer"> <h6>NEW ZEALAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/nicaragua.html" target="to_blank"> <img src="images/flags/Nicaragua.png" alt=""> <div class="layer"> <h6>NICARAGUA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/niger.html" target="to_blank"> <img src="images/flags/Niger.png" alt=""> <div class="layer"> <h6>NIGER</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/nigeria.html" target="to_blank"> <img src="images/flags/Nigeria.png" alt=""> <div class="layer"> <h6>NIGERIA.</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/north korea.html" target="to_blank"> <img src="images/flags/North Korea.png" alt=""> <div class="layer"> <h6>NORTH KOREA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/norway.html" target="to_blank"> <img src="images/flags/Norway.png" alt=""> <div class="layer"> <h6>NORWAY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/oman.html" target="to_blank"> <img src="images/flags/Oman.png" alt=""> <div class="layer"> <h6>OMAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/pakistan.html" target="to_blank"> <img src="images/flags/Pakistan.png" alt=""> <div class="layer"> <h6>PAKISTAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/palau.html" target="to_blank"> <img src="images/flags/Palau.png" alt=""> <div class="layer"> <h6>PALAU</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/palestine.html" target="to_blank"> <img src="images/flags/Palestine.png" alt=""> <div class="layer"> <h6>PALESTINE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/panama.html" target="to_blank"> <img src="images/flags/Panama.png" alt=""> <div class="layer"> <h6>PANAMA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/papua new guinea.html" target="to_blank"> <img src="images/flags/Papua New Guinea.png" alt=""> <div class="layer"> <h6>PAPUA NEW GUINEA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/paraguay.html" target="to_blank"> <img src="images/flags/Paraguay.png" alt=""> <div class="layer"> <h6>PARAGUAY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/peru.html" target="to_blank"> <img src="images/flags/Peru.png" alt=""> <div class="layer"> <h6>PERU</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/philippines.html" target="to_blank"> <img src="images/flags/Philippines.png" alt=""> <div class="layer"> <h6>PHILIPPINES</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/poland.html" target="to_blank"> <img src="images/flags/Poland.png" alt=""> <div class="layer"> <h6>POLAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/portugal.html" target="to_blank"> <img src="images/flags/Portugal.png" alt=""> <div class="layer"> <h6>PORTUGAL</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/qatar.html" target="to_blank"> <img src="images/flags/Qatar.png" alt=""> <div class="layer"> <h6>QATAR</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/romania.html" target="to_blank"> <img src="images/flags/Romania.png" alt=""> <div class="layer"> <h6>ROMANIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/russia.html" target="to_blank"> <img src="images/flags/Russia.png" alt=""> <div class="layer"> <h6>RUSSIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/rwanda.html" target="to_blank"> <img src="images/flags/Rwanda.png" alt=""> <div class="layer"> <h6>RWANDA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/saint helena.html" target="to_blank"> <img src="images/flags/Saint Helena.png" alt=""> <div class="layer"> <h6>SAINT HELENA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/saint kitts and nevis.html" target="to_blank"> <img src="images/flags/Saint Kitts and Nevis.png" alt=""> <div class="layer"> <h6>SAINT KITTS and NEVIS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/saint lucia.html" target="to_blank"> <img src="images/flags/Saint Lucia.png" alt=""> <div class="layer"> <h6>SAINT LUCIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/saint martin.html" target="to_blank"> <img src="images/flags/Saint Martin.png" alt=""> <div class="layer"> <h6>SAINT MARTIN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/saint pierre and miquelon.html" target="to_blank"> <img src="images/flags/Saint Pierre and Miquelon.png" alt=""> <div class="layer"> <h6>SAINT PIERRE and MIQUELON</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/san marino.html" target="to_blank"> <img src="images/flags/San Marino.png" alt=""> <div class="layer"> <h6>SAN MARINO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/sao tom and principe.html" target="to_blank"> <img src="images/flags/Sao Tome and Principe.png" alt=""> <div class="layer"> <h6>SAO TOME and PRINCIPE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/saudi arabia.html" target="to_blank"> <img src="images/flags/Saudi Arabia.png" alt=""> <div class="layer"> <h6>SAUDI ARABIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/senegal.html" target="to_blank"> <img src="images/flags/Senegal.png" alt=""> <div class="layer"> <h6>SENGAL</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/serbia.html" target="to_blank"> <img src="images/flags/Serbia.png" alt=""> <div class="layer"> <h6>SERBIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/seychelles.html" target="to_blank"> <img src="images/flags/Seychelles.png" alt=""> <div class="layer"> <h6>SEYCHELLES</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/sierra leone.html" target="to_blank"> <img src="images/flags/Sierra Leone.png" alt=""> <div class="layer"> <h6>SIERRA LEONE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/singapore.html" target="to_blank"> <img src="images/flags/Singapore.png" alt=""> <div class="layer"> <h6>SINGAPORE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/slovakia.html" target="to_blank"> <img src="images/flags/Slovakia.png" alt=""> <div class="layer"> <h6>SLOVAKIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/slovenia.html" target="to_blank"> <img src="images/flags/Slovenia.png" alt=""> <div class="layer"> <h6>SLOVENIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/solomon islands.html" target="to_blank"> <img src="images/flags/Solomon Islands.png" alt=""> <div class="layer"> <h6>SOLOMON ISLANDS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/somalia.html" target="to_blank"> <img src="images/flags/Somalia.png" alt=""> <div class="layer"> <h6>SOMALIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/south africa.html" target="to_blank"> <img src="images/flags/South Africa.png" alt=""> <div class="layer"> <h6>SOUTH AFRICA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/south korea.html" target="to_blank"> <img src="images/flags/South Korea.png" alt=""> <div class="layer"> <h6>SOUTH KOREA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/south sudan.html" target="to_blank"> <img src="images/flags/South Sudan.png" alt=""> <div class="layer"> <h6>SOUTH SUDAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/spain.html" target="to_blank"> <img src="images/flags/Spain.png" alt=""> <div class="layer"> <h6>SPAIN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/sri lanka.html" target="to_blank"> <img src="images/flags/Sri Lanka.png" alt=""> <div class="layer"> <h6>SRI LANKA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/sudan.html" target="to_blank"> <img src="images/flags/Sudan.png" alt=""> <div class="layer"> <h6>SUDAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/suriname.html" target="to_blank"> <img src="images/flags/Suriname.png" alt=""> <div class="layer"> <h6>SURINAME</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/sweden.html" target="to_blank"> <img src="images/flags/Sweden.png" alt=""> <div class="layer"> <h6>SWEDEN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/switzerland.html" target="to_blank"> <img src="images/flags/Switzerland.png" alt=""> <div class="layer"> <h6>SWITZERLAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/syria.html" target="to_blank"> <img src="images/flags/Syria.png" alt=""> <div class="layer"> <h6>SYRIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/taiwan.html" target="to_blank"> <img src="images/flags/Taiwan.png" alt=""> <div class="layer"> <h6>TAIWAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/tajikistan.html" target="to_blank"> <img src="images/flags/Tajikistan.png" alt=""> <div class="layer"> <h6>TAJIKISTAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/tanzania.html" target="to_blank"> <img src="images/flags/Tanzania.png" alt=""> <div class="layer"> <h6>TANZANIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/thailand.html" target="to_blank"> <img src="images/flags/Thailand.png" alt=""> <div class="layer"> <h6>THAILAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/timor-leste.html" target="to_blank"> <img src="images/flags/Timor-Leste.png" alt=""> <div class="layer"> <h6>TIMOR-LESTE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/togo.html" target="to_blank"> <img src="images/flags/Togo.png" alt=""> <div class="layer"> <h6>TOGO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/tonga.html" target="to_blank"> <img src="images/flags/Tonga.png" alt=""> <div class="layer"> <h6>TONGA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/trinidad and tobago.html" target="to_blank"> <img src="images/flags/Trinidad and Tobago.png" alt=""> <div class="layer"> <h6>TRINIDAD and TOBAGO</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/tunisia.html" target="to_blank"> <img src="images/flags/Tunisia.png" alt=""> <div class="layer"> <h6>TUNISIA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/turkey.html" target="to_blank"> <img src="images/flags/Turkey.png" alt=""> <div class="layer"> <h6>TURKEY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/turks and caicos islands.html" target="to_blank"> <img src="images/flags/Turks and Caicos Islands.png" alt=""> <div class="layer"> <h6>TURKS and CAICOS ISLANDS</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/uae.html" target="to_blank"> <img src="images/flags/UAE.png" alt=""> <div class="layer"> <h6>UAE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/uganda.html" target="to_blank"> <img src="images/flags/Uganda.png" alt=""> <div class="layer"> <h6>UGANDA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/uk.html" target="to_blank"> <img src="images/flags/UK.png" alt=""> <div class="layer"> <h6>UK</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/ukraine.html" target="to_blank"> <img src="images/flags/Ukraine.png" alt=""> <div class="layer"> <h6>UKRAINE</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/uruguay.html" target="to_blank"> <img src="images/flags/Uruguay.png" alt=""> <div class="layer"> <h6>URUGUAY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/usa.html" target="to_blank"> <img src="images/flags/USA.png" alt=""> <div class="layer"> <h6>USA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/uzbekistan.html" target="to_blank"> <img src="images/flags/Uzbekistan.png" alt=""> <div class="layer"> <h6>UZBEKISTAN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/vanuatu.html" target="to_blank"> <img src="images/flags/Vanuatu.png" alt=""> <div class="layer"> <h6>VANUATU</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/vatican city.html" target="to_blank"> <img src="images/flags/Vatican City.png" alt=""> <div class="layer"> <h6>VATICAN CITY</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/venezuela.html" target="to_blank"> <img src="images/flags/Venezuela.png" alt=""> <div class="layer"> <h6>VENEZUELA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/vietnam.html" target="to_blank"> <img src="images/flags/Vietnam.png" alt=""> <div class="layer"> <h6>VIETNAM</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/virgin island-uk.html" target="to_blank"> <img src="images/flags/Virgin Island-UK.png" alt=""> <div class="layer"> <h6>BRITISH VIRGIN ISLAND</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/western sahara.html" target="to_blank"> <img src="images/flags/Western Sahara.png" alt=""> <div class="layer"> <h6>WESTERN SAHARA</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/yemen.html" target="to_blank"> <img src="images/flags/Yemen.png" alt=""> <div class="layer"> <h6>YEMEN</h6> </div> </a>
+                    </div>
+                    <div class="flag-icon">
+                        <a href="Countries/zambia.html" target="to_blank"> <img src="images/flags/Zambia.png" alt=""> <div class="layer"> <h6>ZAMBIA</h6> </div> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto doloribus nesciunt repellat aliquam earum quasi sequi sit atque labore, nemo <br> eius molestiae velit reiciendis at?</p>
+            <div class="links">
+                <a href="" id="facebook" class="fa fa-facebook-square"></a>
+                <a href="" id="twitter" class="fa fa-twitter-square"></a>
+                <a href="" id="instagram" class="fa fa-instagram"></a>
+                <a href="" id="linkedin" class="fa fa-linkedin-square"></a>
+                <a href="" id="email" class="fa fa-envelope"></a>
+                <a href="" id="youtube" class="fa fa-youtube-play"></a>
+            </div>
+            <p>All Copyright <i class="fa fa-copyright"></i> 2021 to MaxDilli Pvt. Ltd. </p>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+</body>
+</html>

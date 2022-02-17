@@ -1,0 +1,298 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* ------------------------------------------------- header ---------------------------------------*/
+header
+{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80px;
+    padding: 20px 10px;
+    align-items:center;
+    background-color: rgb(24, 24, 63);
+    z-index: 10;
+}
+img
+{
+    width: 35px;
+}
+#title
+{
+    text-decoration: none;
+    color:rgb(50,200,50);
+    font-weight: 700;
+    font-size: 37px;
+    padding-left: 10px;
+}
+.nav-links
+{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li
+{
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a
+{
+    text-decoration: none;
+    font-size: 13px;
+    color: #fff;
+}
+.nav-links ul li::after
+{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: rgb(50,200,50);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after
+{
+    width: 100%;
+}
+
+/*---------------------------------------------------- content ----------------------------------------------*/
+
+
+.container
+{
+    position: relative;
+    top: 80px;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    background-color: rgb(212, 245, 212);;
+}
+.container .upper-div
+{
+    display: flex;
+    height: 40%;
+    width: 100vw;
+    
+}
+.upper-div #flag
+{
+    display: inline-block;
+    height: 100%;
+    width: 18%;
+    padding: 20px;
+    margin-right: 10%;
+    background-color: rgb(24, 24, 63);
+    
+}
+.upper-div #flag img
+{
+    height: 70%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 4px rgba(50,200,50,0.5);
+}
+
+.upper-div .x
+{
+    display: inline-block;
+    height: 55%;
+    width: 14%;
+    margin-top: 4%;
+    margin-right: 4%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 20px 20px 30px rgba(9, 148, 255, 0.25), -5px -5px 20px rgba(9, 148, 255, 0.1), inset -5px -5px 15px rgba(9, 148, 255, 0.5);
+
+    color:rgb(50,200,50);
+    font-size: 30px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.upper-div .x p
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.upper-div .x:hover
+{
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.25), -5px -5px 20px rgba(0,0,0,0.1), inset -5px -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+.container .lower-div
+{
+    display: flex;
+    height: 60%;
+    width: 100vw;
+    
+}
+.lower-div #country-details
+{
+    display: inline-block;
+    height: 100%;
+    width: 18%;
+    
+    margin-right: 10%;
+    background-color: rgb(24, 24, 63);
+}
+.lower-div #pie-chart
+{
+    display: inline-block;
+    height: 100%;
+    width: 22%;
+    
+    margin-right: 10%;
+}
+
+.lower-div .circular-bar
+{
+    display: flex;
+    height: 100%;
+    width: 18%;
+    
+    align-items: center;
+    justify-content: center;
+}
+.lower-div .circular-bar #bar1
+{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.lower-div .circular-bar #bar1 .outer1
+{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    
+    padding: 25px;
+    box-shadow: 20px 20px 20px -1px rgba(0,0,0,0.15),
+                -6px -6px 12px -1px rgba(255,255,255,0.7);
+}
+.lower-div .circular-bar #bar1 .outer1 .inner1
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 6px 6px 8px -1px rgba(0,0,0,0.2),
+                inset -3px -3px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15);
+}
+.lower-div .circular-bar #bar1 .outer1 .inner1 #number1
+{
+    font-weight: 600;
+    color: #555;
+}
+#bar1 circle
+{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 25px;
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: anim1 0.2s linear forwards;
+    
+}
+#bar1 svg
+{
+    position: absolute;
+    top: 0;
+    left: 0;   
+}
+@keyframes anim1
+{
+    100%{
+        stroke-dashoffset: 541;
+    }
+}
+#label1
+{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #555;
+}
+
+
+.lower-div .circular-bar #bar2
+{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.lower-div .circular-bar #bar2 .outer2
+{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    
+    padding: 25px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
+}
+.lower-div .circular-bar #bar2 .outer2 .inner2
+{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15);
+}
+.lower-div .circular-bar #bar2 .outer2 .inner2 #number2
+{
+    font-weight: 600;
+    color: #555;
+}
+#bar2 circle
+{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 25px;
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: anim2 4.5s linear forwards;
+    
+}
+#bar2 svg
+{
+    position: absolute;
+    top: 0;
+    left: 0;   
+}
+@keyframes anim2
+{
+    100%{
+        stroke-dashoffset: 115;
+    }
+}
+#label2
+{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #555;
+}

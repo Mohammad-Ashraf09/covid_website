@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19 Live - India's Cases</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="india.css">
+
+    <!-- for favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header class="sticky">
+        <a href="CoviTracker.html"> <img src="/images/coronavirus-icon-2.png"> </a>
+        <a href="CoviTracker.html" id="title">CoviTracker</a>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li> <a href="">HOME</a> </li>
+                <li> <a href="">HELP</a> </li>
+                <li> <a href="">APPOINT VACCINATION</a> </li>
+                <li> <a href="">WHO</a> </li>
+                <li> <a href="">CONTACT</a> </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="upper-div">
+            <div id="flag">
+                <img src="h240/india.png" alt="">
+            </div>
+            
+            <div class="x" id="x1">5</div>
+            <div class="x" id="x2">6</div>
+            <div class="x" id="x3">7</div>
+            <div class="x" id="x4">8</div>
+        </div>
+
+        <div class="lower-div">
+            <div id="country-details"></div>
+            
+            <div id="pie-chart">
+                <canvas id="myChart"></canvas>
+            </div>
+
+            <div class="circular-bar">
+                <div id="bar1">
+                    <div class="outer1">
+                        <div class="inner1">
+                            <div id="number1">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <svg xmlns="https://www.w3.org/2000/svg" version="1.1" width="200px" height="200px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#4f5695" />
+                                <stop offset="100%" stop-color="#984523" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="87" stroke-linecap="round" />
+                    </svg>
+
+                    <div id="label1">Death Rate</div>
+
+                </div>
+            </div>
+            <div class="circular-bar">
+                <div id="bar2">
+                    <div class="outer2">
+                        <div class="inner2">
+                            <div id="number2">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <svg xmlns="https://www.w3.org/2000/svg" version="1.1" width="200px" height="200px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#4f5695" />
+                                <stop offset="100%" stop-color="#984523" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="87" stroke-linecap="round" />
+                    </svg>
+
+                    <div id="label2">Recovery Rate</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    
+</body>
+
+
+    <script>
+        let number1 = document.getElementById("number1");
+        let counter1 = 0;
+        setInterval(() =>{
+            if(counter1.toFixed(2) == 1.49)
+                clearInterval();
+            else{
+                counter1 += 0.01;
+                
+                number1.innerHTML = counter1.toFixed(2) + "%";
+
+            }
+        }, 0);
+
+
+        let number2 = document.getElementById("number2");
+        let counter2 = 0;
+        setInterval(() =>{
+            if(counter2.toFixed(1) == 78.9)
+                clearInterval();
+            else{
+                counter2 += 0.1;
+                number2.innerHTML = counter2.toFixed(1) + "%";
+            }
+        }, 0);
+
+
+
+
+//---------------------------------------------------------------------- PIE CHART --------------------------------------------------------
+        fetch("https://api.covid19api.com/summary")
+        .then((response) => {
+            return response.json();
+        }).then((actualdata) => {
+            //console.log(actualdata.Countries[76]);
+            var cases=[];
+            cases[0] = actualdata.Countries[77].NewConfirmed;
+            cases[1] = actualdata.Countries[77].NewDeaths;
+            cases[2] = 25485;
+            console.log(actualdata.Countries[77]);
+
+            const myChart = document.getElementById('myChart').getContext('2d');
+
+            Chart.defaults.global.defaultFontFamily ='Lato';
+            Chart.defaults.global.defaultFontSize = 15;
+            Chart.defaults.global.defaultFontColor = '#000';
+
+            const massPopChart = new Chart(myChart,
+                {
+                    type: 'pie',
+                    data:
+                    {
+                        labels:['New Cases', 'New Deaths', 'New Recovered'],
+                        datasets:
+                        [{
+                            backgroundColor:['rgba(9,65,98,0.7)', 'rgba(255,0,0,0.7)', 'rgba(255,255,0,0.7)'],
+                            borderWidth: 1,
+                            borderColor:'#777',
+                            hoverBorderWidth: 2,
+                            hoverBorderColor:'#000',
+                            data:cases
+                        }]
+                    },
+                    options:
+                    {
+                        title:
+                        {
+                            display:true,
+                            text:`India's New Cases`,
+                            fontSize:22,
+                            fontColor:'#555'
+                        },
+                        
+                        legend:
+                        {
+                            position:'bottom',
+                            labels:
+                            {
+                                fontColor:'#555',
+                                fontSize:12,
+                            }
+                        },
+                        
+                        layout:
+                        {
+                            padding: {left:5, right:5, bottom:20, top:20}
+                            
+                        },
+                        maintainAspectRatio: false,      // this is for occupy the graph as full space of div container
+                    }
+                });
+        }).catch(err => {
+            console.error(err);
+        });
+
+
+
+//---------------------------------------------------------------------- TOTAL CASES --------------------------------------------------------
+
+fetch("https://api.covid19api.com/summary")
+        .then((response) => {
+            return response.json();
+        }).then((actualdata) => {
+            //console.log(actualdata.Countries[76]);
+            let total = actualdata.Countries[77].TotalConfirmed;
+            let deaths = actualdata.Countries[77].TotalDeaths;
+            let recovered;
+            let active;
+            //console.log(actualdata.Countries[76]);
+            //console.log(deaths);
+
+            document.getElementById('x1').innerHTML = total + "<br><p>Total Cases</p>";
+            document.getElementById('x2').innerHTML = deaths;
+        }).catch(err => {
+            console.error(err);
+        });
+
+
+        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    
+
+</html>
